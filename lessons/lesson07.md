@@ -300,6 +300,143 @@ INNER JOIN テーブル3 AS t3 ON t2.id = t3.id;
 
 ---
 
+## 📋 追加演習問題
+
+理解を深めるために、以下の問題にも挑戦してみましょう：
+
+### 問題1：基本的なJOIN
+以下の結合を実行：
+```sql
+-- 1. salesとcustomersを結合し、顧客名付きの売上一覧を表示
+-- あなたの答えをここに書いてください
+
+-- 2. salesとproductsを結合し、商品名と価格付きの売上一覧を表示
+-- あなたの答えをここに書いてください
+
+-- 3. productsとsalesを結合し、売れた商品の情報だけを表示
+-- あなたの答えをここに書いてください
+```
+
+### 問題2：JOINした結果の加工
+結合後にデータを整形：
+```sql
+-- salesとproductsを結合して、以下の形式で表示：
+-- 売上日 | 商品名 | 単価 | 数量 | 小計（単価×数量）
+SELECT 
+    s.order_date AS 売上日,
+    ___ AS 商品名,
+    ___ AS 単価,
+    s.quantity AS 数量,
+    ___ AS 小計
+FROM 'data/sales.csv' AS s
+INNER JOIN 'data/products.csv' AS p ON ___;
+```
+
+### 問題3：3つのテーブルを結合
+全ての情報を1つにまとめる：
+```sql
+-- sales、customers、productsを全て結合
+-- 顧客名、商品名、カテゴリ、数量、金額を表示
+-- あなたの答えをここに書いてください
+```
+
+### 問題4：条件付きJOIN
+WHERE句と組み合わせ：
+```sql
+-- 1. 電子機器カテゴリの売上だけを、顧客名付きで表示
+-- あなたの答えをここに書いてください
+
+-- 2. 特定期間（1月20日以降）の売上を、商品名・顧客名付きで表示
+-- あなたの答えをここに書いてください
+
+-- 3. 高額商品（3万円以上）の購入履歴を、顧客情報付きで表示
+-- あなたの答えをここに書いてください
+```
+
+### 🎯 チャレンジ問題
+```sql
+-- 「どの顧客がどのカテゴリの商品をいくつ買ったか」を集計
+-- ヒント：JOINとGROUP BYを組み合わせる
+```
+
+### 💡 実践問題：売上レポート
+```sql
+-- 以下のレポートを作成：
+-- 1. 日別売上明細（顧客名、商品名、金額付き）
+-- 2. 顧客別購入商品リスト（重複なし）
+-- 3. カテゴリ別売上集計（顧客数、総数量、総金額）
+```
+
+### 🔍 デバッグ練習
+```sql
+-- 以下のクエリの問題を修正：
+-- エラー1：テーブル別名の使い忘れ
+SELECT customer_name, product_name
+FROM 'data/sales.csv' AS s
+INNER JOIN 'data/customers.csv' AS c ON customer_id = customer_id;
+
+-- エラー2：結合条件の間違い
+SELECT * FROM 'data/sales.csv' s
+INNER JOIN 'data/products.csv' p ON s.customer_id = p.product_id;
+
+-- エラー3：存在しない列の参照
+SELECT s.sale_id, c.name, p.item_name
+FROM 'data/sales.csv' s
+INNER JOIN 'data/customers.csv' c ON s.customer_id = c.customer_id
+INNER JOIN 'data/products.csv' p ON s.product_id = p.product_id;
+```
+
+### 📊 応用：JOINの活用
+```sql
+-- 1. 自己結合の概念（同じ顧客の他の購入を探す）
+-- 例：C001が買った商品を、他に誰が買ったか
+SELECT DISTINCT s2.customer_id, c.customer_name
+FROM 'data/sales.csv' s1
+INNER JOIN 'data/sales.csv' s2 ON s1.product_id = s2.product_id
+INNER JOIN 'data/customers.csv' c ON s2.customer_id = c.customer_id
+WHERE s1.customer_id = 'C001' AND s2.customer_id != 'C001';
+
+-- 2. 複雑な集計
+-- 顧客ごとの「お気に入りカテゴリ」を見つける
+```
+
+### 🎮 総合演習：360度顧客ビュー
+```sql
+-- 特定顧客（C001）の完全な購買履歴を作成：
+-- 購入日、商品名、カテゴリ、単価、数量、小計
+-- さらに以下も追加：
+-- - その顧客の総購入金額
+-- - 平均購入単価
+-- - よく買うカテゴリTOP3
+```
+
+### 🏆 上級問題：クロスセル分析
+```sql
+-- 「この商品を買った人は、こんな商品も買っています」分析
+-- 特定商品（P001）を買った顧客が、他に何を買っているか
+-- 商品名付きで、購入人数の多い順に表示
+```
+
+### 📈 パフォーマンス最適化
+```sql
+-- 以下の2つのクエリの違いを理解：
+-- パターン1：WHERE句で早めに絞り込み
+SELECT c.customer_name, p.product_name, s.quantity
+FROM 'data/sales.csv' s
+INNER JOIN 'data/customers.csv' c ON s.customer_id = c.customer_id
+INNER JOIN 'data/products.csv' p ON s.product_id = p.product_id
+WHERE s.order_date >= '2024-01-20';
+
+-- パターン2：全部結合してから絞り込み（非効率）
+SELECT c.customer_name, p.product_name, s.quantity
+FROM 'data/sales.csv' s
+INNER JOIN 'data/customers.csv' c ON s.customer_id = c.customer_id
+INNER JOIN 'data/products.csv' p ON s.product_id = p.product_id
+WHERE s.order_date >= '2024-01-20';
+```
+
+---
+
 ## ❓ よくある質問
 
 **Q: JOINとINNER JOINの違いは？**

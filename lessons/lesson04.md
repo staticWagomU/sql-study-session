@@ -226,6 +226,114 @@ LIMIT 10
 
 ---
 
+## 📋 追加演習問題
+
+理解を深めるために、以下の問題にも挑戦してみましょう：
+
+### 問題1：基本的な並び替え
+以下の要件に従って並び替えてください：
+```sql
+-- 1. customers.csvを顧客名のあいうえお順（昇順）で表示
+-- あなたの答えをここに書いてください
+
+-- 2. products.csvを価格の安い順で表示
+-- あなたの答えをここに書いてください
+
+-- 3. sales.csvを数量の多い順で表示（上位5件のみ）
+-- あなたの答えをここに書いてください
+```
+
+### 問題2：複数列での並び替え
+優先順位を考えて並び替え：
+```sql
+-- 1. sales.csvを顧客ID順、その中で日付の新しい順
+SELECT * FROM 'data/sales.csv'
+ORDER BY ___, ___ DESC;
+
+-- 2. products.csvをカテゴリ順、その中で価格の高い順
+-- あなたの答えをここに書いてください
+```
+
+### 問題3：条件と組み合わせた並び替え
+WHERE句とORDER BYの組み合わせ：
+```sql
+-- 1. 電子機器カテゴリの商品を価格の高い順で表示
+-- あなたの答えをここに書いてください
+
+-- 2. C001の購入履歴を日付の古い順で表示
+-- あなたの答えをここに書いてください
+
+-- 3. 5個以上の購入を、購入日の新しい順で上位3件表示
+-- あなたの答えをここに書いてください
+```
+
+### 問題4：実務シナリオ
+ビジネスで使える並び替え：
+```sql
+-- 1. 売れ筋商品ランキング（数量の多い商品TOP3）
+-- ヒント：GROUP BYを先取りして使ってみましょう
+SELECT product_id, SUM(quantity) as total
+FROM 'data/sales.csv'
+GROUP BY product_id
+ORDER BY ___ ___
+LIMIT ___;
+
+-- 2. 最近の取引履歴（直近5件）
+-- あなたの答えをここに書いてください
+
+-- 3. 高額商品カタログ（3万円以上を高い順に）
+-- あなたの答えをここに書いてください
+```
+
+### 🎯 チャレンジ問題
+```sql
+-- sales.csvで以下の分析をしてください：
+-- 「各顧客の最初の購入」を見つける
+-- ヒント：顧客ごとに日付の一番古いものを探す
+```
+
+### 💡 実践問題：レポート作成
+```sql
+-- 月次売上レポート用のクエリを作成：
+-- 1. 今月の売上を新しい順で表示（全項目）
+-- 2. 購入数量が多い順に顧客IDを表示（重複あり）
+-- 3. 商品IDごとの売上を日付順に表示
+```
+
+### 🔍 デバッグ練習
+```sql
+-- 以下のクエリの問題点を見つけて修正：
+-- エラー1：ORDER BYの位置
+SELECT * FROM 'data/products.csv'
+ORDER BY price DESC
+WHERE category = '電子機器';
+
+-- エラー2：存在しない列での並び替え
+SELECT product_name, price
+FROM 'data/products.csv'
+ORDER BY product_id;
+
+-- エラー3：DESCの位置
+SELECT * FROM 'data/sales.csv'
+ORDER BY DESC quantity;
+```
+
+### 📊 応用：並び替えの活用
+```sql
+-- 以下を試してみましょう：
+-- 1. 列番号での並び替え（SELECT句の3番目の列で降順）
+SELECT customer_id, product_id, quantity
+FROM 'data/sales.csv'
+ORDER BY 3 DESC;
+
+-- 2. 計算結果での並び替え（仮想的な売上金額）
+SELECT *, quantity * 10000 as amount
+FROM 'data/sales.csv'
+ORDER BY amount DESC;
+```
+
+---
+
 ## ❓ よくある質問
 
 **Q: DESCとASCを間違えやすい**

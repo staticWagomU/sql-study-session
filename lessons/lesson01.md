@@ -146,6 +146,63 @@ GUIだと列名も見やすく、どの列を選ぶか視覚的に確認しな�
 
 ---
 
+## 📋 追加演習問題
+
+理解を深めるために、以下の問題にも挑戦してみましょう：
+
+### 問題1：異なるLIMIT値での表示
+以下のLIMIT値で各ファイルを表示してみましょう：
+```sql
+-- sales.csvを8行表示
+-- あなたの答えをここに書いてください
+
+-- products.csvを2行だけ表示
+-- あなたの答えをここに書いてください
+
+-- customers.csvを全件表示（LIMITなし）
+-- あなたの答えをここに書いてください
+```
+
+### 問題2：ファイルパスの理解
+以下のクエリを実行し、エラーを確認してください：
+```sql
+-- 1. パスの区切り文字を間違える
+SELECT * FROM 'data\sales.csv' LIMIT 5;
+
+-- 2. ファイル名を間違える
+SELECT * FROM 'data/sale.csv' LIMIT 5;
+
+-- 3. 拡張子を忘れる
+SELECT * FROM 'data/sales' LIMIT 5;
+```
+
+### 問題3：複数のクエリを連続実行
+GUIで以下のクエリを順番に実行し、結果を比較してください：
+```sql
+-- 最初のクエリ
+SELECT * FROM 'data/customers.csv' LIMIT 1;
+
+-- 2番目のクエリ
+SELECT * FROM 'data/customers.csv' LIMIT 2;
+
+-- 3番目のクエリ
+SELECT * FROM 'data/customers.csv' LIMIT 3;
+```
+
+### 問題4：データの行数を推測
+LIMITを使わずに各ファイルを表示し、それぞれ何行あるか数えてください：
+- customers.csv: ＿＿行
+- products.csv: ＿＿行
+- sales.csv: ＿＿行
+
+### 🎯 チャレンジ問題
+```sql
+-- sales.csvの最後の5行だけを表示するにはどうすればよいでしょうか？
+-- ヒント：第4回で学ぶORDER BYを先取りして使ってみましょう
+```
+
+---
+
 ## ❓ よくある質問
 
 **Q: ブラウザが開かない**
