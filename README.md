@@ -9,7 +9,7 @@
 
 ## 本勉強会の目的
 
-- この勉強会では、SQLの基礎を学び、自力でデータを取得できる」第一歩を踏み出すこと
+- この勉強会では、『SQLの基礎を学び、自力でデータを取得できる』第一歩を踏み出すこと
 
 ## 得られること
 
@@ -45,9 +45,9 @@
     - `SELECT 列1, 列2 FROM ...` の構文
     - `AS` を使った列名の変更 `... AS 新しい名前`
 - 演習 (25分):
-    1.  `sales.csv` から「商品ID(product\_id)」と「数量(quantity)」だけを表示しよう。
-    2.  `products.csv` から「商品名(product\_name)」と「価格(price)」を表示しよう。
-    3.  `customers.csv` の「顧客名(customer\_name)」を「お名前」という列名で表示しよう。
+    1.  `sales.csv` から「商品ID(product_id)」と「数量(quantity)」だけを表示しよう。
+    2.  `products.csv` から「商品名(product_name)」と「価格(price)」を表示しよう。
+    3.  `customers.csv` の「顧客名(customer_name)」を「お名前」という列名で表示しよう。
 
 ### 【第3回】行を絞る - `WHERE`
 - ゴール: 特定の条件に合うデータだけを絞り込める。
@@ -68,7 +68,7 @@
     - 昇順を指定する `ASC` (省略可能)
 - 演習 (25分):
     1.  `products.csv` を「価格(price)が高い順」に並び替えよう。
-    2.  `sales.csv` を「売上日時(order\_date)が新しい順」に並び替えよう。
+    2.  `sales.csv` を「売上日時(order_date)が新しい順」に並び替えよう。
     3.  `sales.csv` から「数量が5個以上」のデータを、「数量が多い順」に並び替えて表示しよう (`WHERE`と`ORDER BY`の組み合わせ)。
 
 ### 【第5回】全体を集計する - `COUNT`, `SUM`, `AVG`

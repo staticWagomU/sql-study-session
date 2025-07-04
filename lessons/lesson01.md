@@ -11,7 +11,7 @@
 - 軽量で高速なSQLデータベースエンジン
 - インストールが簡単で、すぐに使い始められる
 - CSVファイルを直接読み込んでSQLが実行できる
-- **GUI版**：`duckdb -ui`で視覚的に操作できる
+- **GUI版**：`duckdb -cmd "INSTALL ui;LOAD ui;CALL start_ui();"`で視覚的に操作できる
 
 ### 2. DuckDB GUIの起動方法
 ```bash
@@ -19,8 +19,9 @@
 cd sql-study-session
 
 # DuckDB GUIを起動
-duckdb -ui
+duckdb -cmd "INSTALL ui;LOAD ui;CALL start_ui();"
 ```
+![](https://github.com/user-attachments/assets/0f7084f0-3906-42bc-8012-29d9cfb3eb40)
 
 起動に成功すると、ブラウザが自動的に開き、DuckDBのGUIインターフェースが表示されます。
 
@@ -53,7 +54,9 @@ SELECT * FROM 'ファイル名' LIMIT 10;
 
 ### 演習1：DuckDB GUIの起動確認（全員で一緒に）
 1. ターミナルで`pwd`コマンドを実行し、`sql-study-session`ディレクトリにいることを確認
-2. `duckdb -ui`を実行
+2. DuckDB GUIを起動：
+   - Mac/Linux: `./start_duckdb_ui.sh`を実行
+   - Windows: `start_duckdb_ui.cmd`を実行
 3. ブラウザが自動的に開くことを確認
 4. GUI画面の各エリアを確認
 
@@ -124,7 +127,7 @@ SELECT * FROM 'data/test.csv' LIMIT 5;
 ## 📝 まとめ
 
 今日学んだこと：
-- ✅ DuckDB GUIの起動方法（`duckdb -ui`）
+- ✅ DuckDB GUIの起動方法（`./start_duckdb_ui.sh` または `start_duckdb_ui.cmd`）
 - ✅ GUI画面の3つのエリア（クエリ入力、実行、結果表示）
 - ✅ `SELECT * FROM 'ファイル名' LIMIT n;` の基本構文
 - ✅ セミコロン（`;`）の重要性
