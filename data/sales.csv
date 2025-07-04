@@ -1,4 +1,4 @@
-顧客ID,商品ID,数量,注文日
+customer_id,product_id,quantity,order_date
 C001,P001,5,2024-01-15
 C002,P003,2,2024-01-16
 C001,P002,10,2024-01-17
