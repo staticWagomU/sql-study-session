@@ -43,7 +43,7 @@ jobs:
             libxss1 \
             libgtk-3-0 \
             libnss3 \
-            libasound2
+            libasound2t64
           
       - name: Install Marp CLI
         run: npm install -g @marp-team/marp-cli
