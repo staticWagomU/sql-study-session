@@ -1,0 +1,56 @@
+name: Generate PDFs from Marp slides
+
+on:
+  push:
+    paths:
+      - 'slides/**/*.md'
+      - 'slides/theme/**'
+      - '.github/workflows/generate-pdfs.yml'
+  pull_request:
+    paths:
+      - 'slides/**/*.md'
+      - 'slides/theme/**'
+      - '.github/workflows/generate-pdfs.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-pdfs:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Install Marp CLI
+        run: npm install -g @marp-team/marp-cli
+        
+      - name: Create output directory
+        run: mkdir -p pdfs
+        
+      - name: Generate PDFs
+        run: |
+          for file in slides/lesson*.md; do
+            filename=$(basename "$file" .md)
+            marp "$file" --theme-set slides/theme/orange-gradient.css --pdf --allow-local-files -o "pdfs/${filename}.pdf"
+          done
+          
+      - name: List generated PDFs
+        run: ls -la pdfs/
+        
+      - name: Commit and push PDFs
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Generate PDFs from Marp slides [skip ci]"
+          file_pattern: pdfs/*.pdf
+          commit_user_name: github-actions[bot]
+          commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          commit_author: GitHub Actions <actions@github.com>
