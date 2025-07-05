@@ -1,0 +1,327 @@
+/* @theme orange-gradient */
+
+@import 'default';
+@import url('https://cdn.jsdelivr.net/npm/kiso.css@latest/kiso.css');
+
+:root {
+  --orange-primary: #FF6B35;
+  --orange-secondary: #FF9558;
+  --orange-light: #FFAB78;
+  --orange-lighter: #FFD4A3;
+  --orange-dark: #E85D25;
+  --gray-dark: #333333;
+  --gray-medium: #666666;
+  --gray-light: #999999;
+  --white: #FFFFFF;
+  --bg-light: #FFF8F3;
+  
+  /* kiso.cssと相性の良いフォント設定 */
+  font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', Meiryo, sans-serif;
+}
+
+section {
+  background: linear-gradient(135deg, var(--bg-light) 0%, var(--white) 100%);
+  color: var(--gray-dark);
+  padding: 70px;
+  line-height: 1.7; /* kiso.cssに合わせた行間 */
+  letter-spacing: 0.03em; /* 日本語の読みやすさ向上 */
+}
+
+section.lead {
+  background: var(--white);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section.lead h1 {
+  background: linear-gradient(135deg, var(--orange-primary) 0%, var(--orange-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 3em;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+section.lead h2 {
+  color: var(--gray-medium);
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+h1 {
+  color: var(--orange-primary);
+  font-size: 2.5em;
+  font-weight: 700;
+  border-bottom: 3px solid var(--orange-primary);
+  padding-bottom: 0.3em;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  color: var(--orange-secondary);
+  font-size: 1.8em;
+  font-weight: 600;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  color: var(--orange-dark);
+  font-size: 1.4em;
+  font-weight: 600;
+  margin-top: 0.8em;
+  margin-bottom: 0.4em;
+}
+
+h4 {
+  color: var(--gray-dark);
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-top: 0.6em;
+  margin-bottom: 0.3em;
+}
+
+/* コードブロック */
+pre {
+  background: #F8F8F8;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  padding: 1em;
+  overflow-x: auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+code {
+  background: #FFF5F0;
+  border-radius: 4px;
+  padding: 0.2em 0.4em;
+  color: var(--orange-dark);
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Source Code Pro', monospace;
+  font-size: 0.9em;
+}
+
+pre code {
+  background: transparent;
+  color: var(--gray-dark);
+  padding: 0;
+}
+
+/* シンタックスハイライト用の色 */
+pre code .hljs-keyword,
+pre code .hljs-selector-tag,
+pre code .hljs-literal,
+pre code .hljs-section,
+pre code .hljs-link {
+  color: var(--orange-primary);
+}
+
+pre code .hljs-string,
+pre code .hljs-title,
+pre code .hljs-name,
+pre code .hljs-type,
+pre code .hljs-attribute,
+pre code .hljs-symbol,
+pre code .hljs-bullet,
+pre code .hljs-built_in,
+pre code .hljs-addition,
+pre code .hljs-variable,
+pre code .hljs-template-tag,
+pre code .hljs-template-variable {
+  color: var(--orange-secondary);
+}
+
+pre code .hljs-comment,
+pre code .hljs-quote,
+pre code .hljs-deletion,
+pre code .hljs-meta {
+  color: var(--gray-light);
+}
+
+pre code .hljs-keyword,
+pre code .hljs-selector-tag,
+pre code .hljs-literal,
+pre code .hljs-title,
+pre code .hljs-section,
+pre code .hljs-doctag,
+pre code .hljs-type,
+pre code .hljs-name,
+pre code .hljs-strong {
+  font-weight: bold;
+}
+
+pre code .hljs-emphasis {
+  font-style: italic;
+}
+
+/* リスト */
+ul, ol {
+  margin-left: 1.5em;
+  line-height: 1.8;
+  padding-left: 0.5em; /* kiso.cssとの調整 */
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+/* 日本語の約物の調整 */
+li::marker {
+  unicode-bidi: isolate;
+}
+
+ul > li::marker {
+  color: var(--orange-primary);
+}
+
+/* テーブル */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+th {
+  background: linear-gradient(135deg, var(--orange-primary) 0%, var(--orange-secondary) 100%);
+  color: var(--white);
+  padding: 0.8em;
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  padding: 0.8em;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+tr:nth-child(even) {
+  background: var(--bg-light);
+}
+
+/* 強調 */
+strong {
+  color: var(--orange-dark);
+  font-weight: 700;
+}
+
+em {
+  color: var(--orange-secondary);
+  font-style: italic;
+}
+
+/* リンク */
+a {
+  color: var(--orange-primary);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.3s ease;
+}
+
+a:hover {
+  border-bottom: 2px solid var(--orange-primary);
+}
+
+/* ブロッククォート */
+blockquote {
+  border-left: 4px solid var(--orange-primary);
+  margin: 1em 0;
+  padding-left: 1em;
+  color: var(--gray-medium);
+  font-style: italic;
+  background: var(--bg-light);
+  padding: 1em;
+  border-radius: 0 8px 8px 0;
+}
+
+/* セクションヘッダー */
+section[data-marpit-advanced-background] {
+  position: relative;
+}
+
+/* アイコン付きヘッダー */
+section:not(.lead) h1:before {
+  content: "";
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  background: linear-gradient(135deg, var(--orange-primary) 0%, var(--orange-secondary) 100%);
+  border-radius: 50%;
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+
+/* 特別なクラス */
+.highlight {
+  background: linear-gradient(135deg, var(--orange-light) 0%, var(--orange-lighter) 100%);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  color: var(--gray-dark);
+}
+
+.accent {
+  color: var(--orange-primary);
+  font-weight: 700;
+}
+
+/* ページ番号 */
+section::after {
+  color: var(--orange-primary);
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+/* 💡 Tips用のスタイル */
+.tip {
+  background: linear-gradient(135deg, var(--orange-lighter) 0%, var(--bg-light) 100%);
+  border-left: 4px solid var(--orange-primary);
+  padding: 1em;
+  border-radius: 0 8px 8px 0;
+  margin: 1em 0;
+}
+
+.tip::before {
+  content: "💡 ";
+  font-size: 1.2em;
+}
+
+/* 警告用のスタイル */
+.warning {
+  background: linear-gradient(135deg, #FFE5E5 0%, #FFF0F0 100%);
+  border-left: 4px solid #FF4444;
+  padding: 1em;
+  border-radius: 0 8px 8px 0;
+  margin: 1em 0;
+}
+
+.warning::before {
+  content: "⚠️ ";
+  font-size: 1.2em;
+}
+
+/* チェックマーク */
+.check {
+  color: var(--orange-primary);
+}
+
+.check::before {
+  content: "✅ ";
+}
+
+/* フッター - 無効化 */
+footer {
+  display: none;
+}
+
+/* プログレスバー */
+section:not(.lead)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--orange-primary) 0%, var(--orange-secondary) 100%);
+}

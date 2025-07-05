@@ -1,0 +1,6 @@
+theme: orange-gradient
+themeSet:
+  - ./theme/orange-gradient.css
+pdf: true
+html: true
+allowLocalFiles: true
