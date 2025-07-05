@@ -15,8 +15,8 @@
   --white: #FFFFFF;
   --bg-light: #FFF8F3;
   
-  /* kiso.cssと相性の良いフォント設定 */
-  font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', Meiryo, sans-serif;
+  /* kiso.cssと相性の良いフォント設定 - PDF生成時の日本語対応 */
+  font-family: 'Noto Sans CJK JP', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
 }
 
 section {

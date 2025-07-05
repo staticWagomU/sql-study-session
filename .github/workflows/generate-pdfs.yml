@@ -29,6 +29,22 @@ jobs:
         with:
           node-version: '20'
           
+      - name: Install Japanese fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-cjk fonts-noto-cjk-extra
+          fc-cache -fv
+          
+      - name: Install Chromium dependencies
+        run: |
+          sudo apt-get install -y \
+            libgbm-dev \
+            libxkbcommon-x11-0 \
+            libxss1 \
+            libgtk-3-0 \
+            libnss3 \
+            libasound2
+          
       - name: Install Marp CLI
         run: npm install -g @marp-team/marp-cli
         
@@ -39,7 +55,13 @@ jobs:
         run: |
           for file in slides/lesson*.md; do
             filename=$(basename "$file" .md)
-            marp "$file" --theme-set slides/theme/orange-gradient.css --pdf --allow-local-files -o "pdfs/${filename}.pdf"
+            marp "$file" \
+              --theme-set slides/theme/orange-gradient.css \
+              --pdf \
+              --allow-local-files \
+              --pdf-notes \
+              --pdf-outlines \
+              -o "pdfs/${filename}.pdf"
           done
           
       - name: List generated PDFs
