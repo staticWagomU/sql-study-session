@@ -8,7 +8,7 @@ header: 'SQL勉強会 - 第4回'
 
 <!-- _class: lead -->
 
-# 第4回：並び替える - ORDER BY（GUI版）
+# 第4回：並び替える - ORDER BY
 ## 結果を見やすいように昇順・降順で並び替えられるようになる
 
 ---
@@ -55,7 +55,7 @@ SELECT * FROM 'data/products.csv' ORDER BY price;  -- ASCは省略可
 
 ---
 
-## 4. GUIでの確認ポイント
+## 4. 確認ポイント
 
 - 並び替え結果が視覚的にすぐ確認できる
 - 列ヘッダーをクリックして簡易ソートもできる場合がある
@@ -187,7 +187,7 @@ ORDER BY order_date DESC;
 
 ---
 
-# 🌟 GUIでの効率的な確認方法
+# 🌟 効率的な確認方法
 
 ## 並び替えの効果を視覚的に確認
 
@@ -202,7 +202,7 @@ SELECT product_name, price FROM 'data/products.csv'
 ORDER BY price DESC;
 ```
 
-→ GUIなら結果の違いが一目瞭然！
+→ 結果の違いが一目瞭然！
 
 ---
 

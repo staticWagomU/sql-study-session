@@ -50,7 +50,7 @@ SELECT customer_name AS お名前 FROM 'data/customers.csv';
 
 ---
 
-## 4. GUIでの操作メリット
+## 4. DuckDBでの操作メリット
 
 - 結果がすぐに表形式で確認できる
 - 列名が見やすく表示される
@@ -62,7 +62,7 @@ SELECT customer_name AS お名前 FROM 'data/customers.csv';
 
 ## 演習1：sales.csvから「商品ID」と「数量」だけを表示
 
-1. DuckDB GUIのクエリ入力エリアに入力：
+1. クエリ入力エリアに入力：
 ```sql
 SELECT product_id, quantity FROM 'data/sales.csv';
 ```
@@ -90,7 +90,7 @@ SELECT product_name, price FROM 'data/products.csv';
 <ul>
 <li>商品名が日本語で正しく表示されている</li>
 <li>価格が数値として表示されている</li>
-<li>GUIなら文字化けもすぐに気づける</li>
+<li>文字化けもすぐに気づける</li>
 </ul>
 </div>
 
@@ -116,7 +116,7 @@ FROM 'data/customers.csv';
 ```
 
 <div class="tip">
-<strong>GUIの便利機能</strong>：
+<strong>便利機能</strong>：
 <ul>
 <li>改行して見やすく書ける</li>
 <li>結果の列名が日本語で表示される</li>
@@ -190,7 +190,7 @@ FROM 'data/customers.csv';
 ```
 
 <div class="tip">
-<strong>GUIならではの活用法</strong>：
+<strong>活用法</strong>：
 <ul>
 <li>結果をそのままコピーしてExcelに貼り付け可能</li>
 <li>見た目を確認しながらクエリを調整できる</li>
@@ -199,7 +199,7 @@ FROM 'data/customers.csv';
 
 ---
 
-# 🌟 GUIを活用したデバッグ
+# 🌟 デバッグ方法
 
 ## 列名を間違えた場合
 
@@ -233,7 +233,7 @@ phoneという列は存在しないというエラー
 - <span class="check">`SELECT 列名1, 列名2 FROM ...` で必要な列だけ選択</span>
 - <span class="check">列名はカンマで区切る</span>
 - <span class="check">`AS` を使って列に別名をつけられる</span>
-- <span class="check">GUIなら結果がすぐに確認できて便利</span>
+- <span class="check">結果がすぐに確認できて便利</span>
 - <span class="check">エラーも分かりやすく表示される</span>
 
 ---
@@ -257,7 +257,7 @@ FROM 'data/customers.csv';
 # 🚀 次回予告
 
 第3回では、WHERE句を使って特定の条件に合うデータだけを取り出す方法を学びます。
-GUIで結果を見ながら、条件を調整していくことができます！
+結果を見ながら、条件を調整していくことができます！
 
 ---
 
@@ -368,4 +368,4 @@ A: DuckDBでは区別されません。`customer_id`も`CUSTOMER_ID`も同じで
 A: 省略可能ですが、読みやすさのためASを使うことを推奨します。
 
 **Q: 結果をファイルに保存できますか？**
-A: GUIの機能でCSVエクスポートが可能です。または、結果を選択してコピー＆ペーストもできます。
+A: CSVエクスポートが可能です。または、結果を選択してコピー＆ペーストもできます。

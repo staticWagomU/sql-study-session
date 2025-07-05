@@ -8,7 +8,7 @@ header: 'SQL勉強会 - 第6回'
 
 <!-- _class: lead -->
 
-# 第6回：グループで集計する - GROUP BY（GUI版）
+# 第6回：グループで集計する - GROUP BY
 ## 「〇〇ごと」の合計や件数を計算できるようになる
 
 ---
@@ -215,7 +215,7 @@ GROUP BY category;
 
 ---
 
-# 🌟 GUIでGROUP BYを理解する
+# 🌟 GROUP BYを理解する
 
 ## ステップバイステップで確認
 
@@ -238,7 +238,7 @@ FROM 'data/sales.csv'
 GROUP BY customer_id;
 ```
 
-→ GUIなら元データと集計結果を並べて比較できる！
+→ 元データと集計結果を並べて比較できる！
 
 ---
 

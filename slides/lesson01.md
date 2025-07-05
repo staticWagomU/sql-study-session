@@ -8,13 +8,13 @@ header: 'SQL勉強会 - 第1回'
 <!-- _class: lead -->
 
 # 第1回：準備と最初のクエリ
-## GUI版でスタート！
+## DuckDBでスタート！
 
 ---
 
 # 本日のゴール
 
-<div class="check">DuckDB GUIを起動し、データをn行表示できるようになる</div>
+<div class="check">DuckDBを起動し、データをn行表示できるようになる</div>
 
 ---
 
@@ -24,27 +24,27 @@ header: 'SQL勉強会 - 第1回'
 - 軽量で高速な<span class="accent">SQLデータベースエンジン</span>
 - インストールが簡単で、すぐに使い始められる
 - CSVファイルを直接読み込んでSQLが実行できる
-- **GUI版**：`duckdb -cmd "INSTALL ui;LOAD ui;CALL start_ui();"`で視覚的に操作できる
+- ブラウザベースのUIで視覚的に操作できる
 
 ---
 
-## 2. DuckDB GUIの起動方法
+## 2. DuckDBの起動方法
 
 ```bash
 # プロジェクトディレクトリに移動
 cd sql-study-session
 
-# DuckDB GUIを起動
+# DuckDBを起動
 duckdb -cmd "INSTALL ui;LOAD ui;CALL start_ui();"
 ```
 
 <div class="tip">
-起動に成功すると、ブラウザが自動的に開き、DuckDBのGUIインターフェースが表示されます。
+起動に成功すると、ブラウザが自動的に開き、DuckDBのインターフェースが表示されます。
 </div>
 
 ---
 
-## 3. GUI画面の構成
+## 3. 画面の構成
 
 画面は大きく<span class="accent">3つのエリア</span>に分かれています：
 
@@ -79,14 +79,14 @@ SELECT * FROM 'ファイル名' LIMIT 10;
 
 # 💻 演習パート
 
-## 演習1：DuckDB GUIの起動確認（全員で一緒に）
+## 演習1：DuckDBの起動確認（全員で一緒に）
 
 1. ターミナルで`pwd`コマンドを実行し、`sql-study-session`ディレクトリにいることを確認
-2. DuckDB GUIを起動：
+2. DuckDBを起動：
    - Mac/Linux: `./start_duckdb_ui.sh`を実行
    - Windows: `start_duckdb_ui.cmd`を実行
 3. ブラウザが自動的に開くことを確認
-4. GUI画面の各エリアを確認
+4. 画面の各エリアを確認
 
 ---
 
@@ -136,7 +136,7 @@ SELECT * FROM 'data/customers.csv' LIMIT 3;
 ```
 
 <div class="tip">
-<strong>GUI操作のコツ</strong>：
+<strong>操作のコツ</strong>：
 <ul>
 <li>クエリ入力エリアでは、複数行に分けて書くことも可能</li>
 <li>実行履歴は画面に残るので、前のクエリを参考にできる</li>
@@ -181,15 +181,15 @@ SELECT * FROM 'data/test.csv' LIMIT 5;
 # 📝 本日のまとめ
 
 今日学んだこと：
-- <span class="check">DuckDB GUIの起動方法（`./start_duckdb_ui.sh` または `start_duckdb_ui.cmd`）</span>
-- <span class="check">GUI画面の3つのエリア（クエリ入力、実行、結果表示）</span>
+- <span class="check">DuckDBの起動方法（`./start_duckdb_ui.sh` または `start_duckdb_ui.cmd`）</span>
+- <span class="check">画面の3つのエリア（クエリ入力、実行、結果表示）</span>
 - <span class="check">`SELECT * FROM 'ファイル名' LIMIT n;` の基本構文</span>
 - <span class="check">セミコロン（`;`）の重要性</span>
 - <span class="check">CSVファイルから直接データを読み込む方法</span>
 
 ---
 
-## GUIの便利な機能
+## 便利な機能
 
 - **自動補完**：入力中に候補が表示される場合がある
 - **エラー表示**：構文エラーが分かりやすく表示される
@@ -200,7 +200,7 @@ SELECT * FROM 'data/test.csv' LIMIT 5;
 # 🚀 次回予告
 
 第2回では、必要な列だけを選んで表示する方法を学びます。
-GUIだと列名も見やすく、どの列を選ぶか視覚的に確認しながら進められます！
+列名も見やすく、どの列を選ぶか視覚的に確認しながら進められます！
 
 ---
 
@@ -242,7 +242,7 @@ SELECT * FROM 'data/sales' LIMIT 5;
 
 ## 問題3：複数のクエリを連続実行
 
-GUIで以下のクエリを順番に実行し、結果を比較してください：
+以下のクエリを順番に実行し、結果を比較してください：
 
 ```sql
 -- 最初のクエリ
