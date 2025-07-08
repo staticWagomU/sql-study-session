@@ -179,6 +179,24 @@ sql-study-session/
 - **Issues**: 質問や問題がある場合は[GitHubのIssues](https://github.com/staticWagomU/sql-study-session/issues)へ
 - **ドキュメント**: 各レッスンファイルの「よくある質問」セクションも参照
 
+## Marpでスライドを表示する
+
+プレゼンテーション用のスライドをMarpサーバーモードで表示できます：
+
+```bash
+# Marpサーバーの起動（ホットリロード対応）
+npx @marp-team/marp-cli -s .
+
+# 特定のポートを指定する場合
+npx @marp-team/marp-cli -s . -p 8080
+
+# スライドファイルを直接指定する場合
+npx @marp-team/marp-cli -s slides.md
+```
+
+サーバーが起動したら、ブラウザで `http://localhost:8080` にアクセスしてスライドを表示します。
+ファイルを編集すると自動的にブラウザがリロードされます。
+
 ## 編集履歴
 
 - 2025/07/01 初版
