@@ -115,7 +115,7 @@ SELECT * FROM 'ファイル名' LIMIT 10;
 ```sql
 -- エラー例：ファイルが見つからない
 SELECT * FROM 'data/test.csv';
--- Error: Offset is outside the bounds of the DataView
+-- IO Error: No files found that match the pattern "data/product.csv"
 ```
 
 <div class="warning">
