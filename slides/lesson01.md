@@ -89,9 +89,14 @@ SELECT * FROM 'ファイル名' LIMIT 10;
 
 ---
 
-# DuckDB GUIの詳しい使い方
+# DuckDBの詳しい使い方
 
-![](https://github.com/user-attachments/assets/8f673c7e-579b-4de3-a062-eca6847863f2)
+### コメントの書き方
+- **単一行コメント**：`--` でその行の残りをコメントにできます
+- **複数行コメント**：`/* */` で囲んだ部分をコメントにできます
+
+
+![bg right:40% 90%](https://github.com/user-attachments/assets/8f673c7e-579b-4de3-a062-eca6847863f2)
 
 ---
 
