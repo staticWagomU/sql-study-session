@@ -7,7 +7,8 @@ header: 'SQL勉強会 - 第2回'
 
 <!-- _class: lead -->
 
-# 第2回：列を選ぶ - SELECT 列名
+# 第2回：列を選ぶ<br />- SELECT 列名 -
+
 ## 必要な情報だけを抜き出そう！
 
 ---
@@ -120,7 +121,6 @@ FROM 'data/customers.csv';
 <ul>
 <li>改行して見やすく書ける</li>
 <li>結果の列名が日本語で表示される</li>
-<li>列幅を調整して見やすくできる</li>
 </ul>
 </div>
 
@@ -201,29 +201,17 @@ FROM 'data/customers.csv';
 
 # デバッグ方法
 
-## 列名を間違えた場合
+## 列名を間違えたり、<br />存在しない列を指定した場合
 
 ```sql
--- わざと間違えてみる
 SELECT customername FROM 'data/customers.csv';
+/*
+Binder Error: Referenced column "customername" not found in FROM clause!
+Candidate bindings: "customer_name", "customer_id", "registration_date"
+
+LINE 2: SELECT customername FROM 'data/customers.csv'
+*/
 ```
-
-<div class="warning">
-エラーメッセージで「column "customername" does not exist」と表示される<br>
-→ 正しくは `customer_name`（アンダースコアが必要）
-</div>
-
----
-
-## 存在しない列を指定した場合
-
-```sql
-SELECT customer_id, phone FROM 'data/customers.csv';
-```
-
-<div class="warning">
-phoneという列は存在しないというエラー
-</div>
 
 ---
 
@@ -327,13 +315,10 @@ FROM 'data/products.csv';
 以下のクエリのエラーを修正してください：
 
 ```sql
--- エラー1：カンマ忘れ
 SELECT customer_id customer_name FROM 'data/customers.csv';
 
--- エラー2：存在しない列名
 SELECT id, name FROM 'data/customers.csv';
 
--- エラー3：ASの位置が間違い
 SELECT customer_name お名前 AS FROM 'data/customers.csv';
 ```
 
