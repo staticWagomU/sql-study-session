@@ -27,13 +27,12 @@ header: 'SQL勉強会 - 第7回'
 
 **例：売上データの問題**
 ```
-sales.csv には：
+sales.csv：
 customer_id | product_id | quantity
 C001        | P003       | 5
 
-でも知りたいのは：
-顧客名は？ → customers.csvを見る必要がある
-商品名は？ → products.csvを見る必要がある
+→ 顧客名は？ customers.csvが必要
+→ 商品名は？ products.csvが必要
 ```
 
 ---
