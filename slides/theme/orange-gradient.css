@@ -1,7 +1,7 @@
 /* @theme orange-gradient */
 
-@import 'default';
 @import url('https://cdn.jsdelivr.net/npm/kiso.css@latest/kiso.css');
+@import 'default';
 
 :root {
   --orange-primary: #FF6B35;
@@ -92,6 +92,16 @@ pre {
   padding: 1em;
   overflow-x: auto;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  /* 等幅フォントの設定を強化 */
+  font-family: 'Consolas', 'Monaco', 'Menlo', 'DejaVu Sans Mono', 'Courier New', monospace;
+  font-size: 0.85em;
+  line-height: 1.4;
+  /* 文字間隔を固定 */
+  letter-spacing: 0;
+  /* フォント合成を無効化（日本語環境での等幅保証） */
+  font-synthesis: none;
+  /* テキストレンダリングを最適化 */
+  text-rendering: optimizeLegibility;
 }
 
 code {
@@ -99,14 +109,20 @@ code {
   border-radius: 4px;
   padding: 0.2em 0.4em;
   color: var(--orange-dark);
-  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Source Code Pro', monospace;
+  font-family: 'Consolas', 'Monaco', 'Menlo', 'DejaVu Sans Mono', 'Courier New', monospace;
   font-size: 0.9em;
+  /* 文字間隔を固定 */
+  letter-spacing: 0;
+  /* フォント合成を無効化 */
+  font-synthesis: none;
 }
 
 pre code {
   background: transparent;
   color: var(--gray-dark);
   padding: 0;
+  /* preの設定を継承 */
+  font-size: 1em;
 }
 
 /* シンタックスハイライト用の色 */
@@ -161,6 +177,14 @@ ul, ol {
   margin-left: 1.5em;
   line-height: 1.8;
   padding-left: 0.5em; /* kiso.cssとの調整 */
+}
+
+ol > li {
+  list-style: decimal;
+}
+
+ul > li {
+  list-style: circle;
 }
 
 li {
