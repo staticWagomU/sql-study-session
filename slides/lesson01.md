@@ -50,13 +50,23 @@ duckdb -cmd "INSTALL ui;LOAD ui;CALL start_ui();"
 
 ---
 
-## 3. 画面の構成
+## 3. DuckDBの終了方法
+ターミナルで`.exit`と入力するか、`Ctrl+D`を押すとDuckDBを終了できます。  
+<div class="warning">
+ブラウザのタブを閉じるだけでは終了できません。
+</div>
+
+
+
+---
+
+## 4. 画面の構成
 
 ![Image](https://github.com/user-attachments/assets/2f3cbaa3-3901-488a-b96a-7325565e0f1b)
 
 ---
 
-## 4. 基本的なSQLコマンド
+## 5. 基本的なSQLコマンド
 
 ```sql
 SELECT * FROM 'ファイル名' LIMIT 10;
@@ -70,7 +80,7 @@ SELECT * FROM 'ファイル名' LIMIT 10;
 
 ---
 
-## 5. データファイルの構成
+## 6. データファイルの構成
 
 今回使うデータ：
 - `customers.csv`：顧客データ（7人）
