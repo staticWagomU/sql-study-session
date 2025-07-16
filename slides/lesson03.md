@@ -85,10 +85,6 @@ WHERE price >= 1000;
    - 何件表示されたか？
    - どの商品が条件を満たしたか？
 
-<div class="tip">
-<strong>確認ポイント</strong>：価格が2999円のワイヤレスマウスも含まれている
-</div>
-
 ---
 
 ## 演習2：顧客IDが「C001」の売上データだけを表示
@@ -257,7 +253,7 @@ WHERE quantity >= 10; -- 結果：？件
 -- 数値の範囲指定
 WHERE price >= 1000 AND price <= 5000
 
--- 特定の値のリスト（第4回以降で学ぶIN句の代わり）
+-- 特定の値のリスト
 WHERE customer_id = 'C001' 
    OR customer_id = 'C002' 
    OR customer_id = 'C003'
