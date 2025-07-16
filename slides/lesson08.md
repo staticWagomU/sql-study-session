@@ -186,13 +186,18 @@ ORDER BY s.order_date DESC, 売上金額 DESC;
 
 ---
 
+<style scoped>
+    pre {
+        font-size: .7rem;
+    }
+</style>
+
 # 実践的な分析例
 
 ## ケース1：優良顧客分析
 
 ```sql
--- 購入金額上位の顧客とその詳細
-WITH customer_summary AS (
+SELECT * FROM ( -- 購入金額上位の顧客とその詳細
     SELECT 
         c.customer_id,
         c.customer_name,
@@ -204,8 +209,7 @@ WITH customer_summary AS (
     LEFT JOIN 'data/sales.csv' AS s ON c.customer_id = s.customer_id
     LEFT JOIN 'data/products.csv' AS p ON s.product_id = p.product_id
     GROUP BY c.customer_id, c.customer_name, c.email
-)
-SELECT * FROM customer_summary
+ ) customer_summary
 ORDER BY 合計金額 DESC;
 ```
 
@@ -360,6 +364,8 @@ ORDER BY 累計購入金額 DESC;
 - SQLZoo
 - HackerRank SQL
 - LeetCode Database
+
+---
 
 ## 書籍
 - 「SQL実践入門」
