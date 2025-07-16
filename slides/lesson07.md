@@ -8,7 +8,7 @@ header: 'SQL勉強会 - 第7回'
 
 <!-- _class: lead -->
 
-# 第7回：表をくっつける - INNER JOIN
+# 第7回：表をくっつける<br /> - INNER JOIN -
 ## IDで管理された2つの表を結合し、意味のある情報として表示できるようになる
 
 ---
@@ -201,13 +201,18 @@ ORDER BY 購入金額合計 DESC;
 
 ---
 
+<style scoped>
+    pre {
+        font-size: 0.7em;
+    }
+</style>
+
 # 実践的な使い方
 
 ## ケース1：売上レポート
 
 ```sql
--- 見やすい売上明細
-SELECT 
+SELECT -- 見やすい売上明細
     s.order_date AS 売上日,
     c.customer_name AS 顧客名,
     c.email AS メール,
@@ -275,8 +280,9 @@ LIMIT 3;
 ## よくあるエラーと対処法
 
 <div class="warning">
-<strong>列名の曖昧さエラー</strong>：
+    <strong>列名の曖昧さエラー</strong>：
 </div>
+
 ```sql
 -- customer_idがどちらのテーブルか不明
 SELECT customer_id  -- エラー！
@@ -288,8 +294,9 @@ ON s.customer_id = c.customer_id;
 ---
 
 <div class="tip">
-<strong>テーブル名を明示</strong>：
+    <strong>テーブル名を明示</strong>：
 </div>
+
 ```sql
 SELECT s.customer_id  -- OK！
 FROM 'data/sales.csv' AS s
@@ -305,6 +312,8 @@ ON s.customer_id = c.customer_id;
 結合する前に、共通の列（キー）を確認：
 - sales.csv ← customer_id → customers.csv
 - sales.csv ← product_id → products.csv
+
+---
 
 ## 2. パフォーマンスの考慮
 - 必要な列だけSELECT
