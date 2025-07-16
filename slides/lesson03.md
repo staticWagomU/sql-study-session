@@ -75,13 +75,13 @@ WHERE price > 50000 OR category = '家具'      -- どちらか満たす
 
 ## 演習1：価格が1000円以上の商品を探そう
 
-1. クエリ入力エリアに入力：
+1. 以下クエリを実行：
 ```sql
 SELECT * FROM 'data/products.csv' 
 WHERE price >= 1000;
 ```
 
-2. 実行して結果を確認
+2. 結果を確認
    - 何件表示されたか？
    - どの商品が条件を満たしたか？
 
@@ -227,18 +227,15 @@ WHERE (price > 10000 OR category = '家具')
 
 ```sql
 -- 全データ
-SELECT COUNT(*) FROM 'data/sales.csv';
--- 結果：15件
+SELECT COUNT(*) FROM 'data/sales.csv'; -- 結果：15件
 
 -- C001の購入履歴
 SELECT COUNT(*) FROM 'data/sales.csv' 
-WHERE customer_id = 'C001';
--- 結果：？件
+WHERE customer_id = 'C001'; -- 結果：？件
 
 -- 10個以上の大量購入
 SELECT COUNT(*) FROM 'data/sales.csv' 
-WHERE quantity >= 10;
--- 結果：？件
+WHERE quantity >= 10; -- 結果：？件
 ```
 
 ---
@@ -339,13 +336,13 @@ WHERE ___ OR ___;
 以下のクエリの間違いを修正してください：
 
 ```sql
--- エラー1：文字列のクォート忘れ
+-- エラー1：
 SELECT * FROM 'data/sales.csv' WHERE customer_id = C001;
 
--- エラー2：比較演算子の間違い
+-- エラー2：
 SELECT * FROM 'data/products.csv' WHERE price => 10000;
 
--- エラー3：AND/ORの優先順位
+-- エラー3：
 SELECT * FROM 'data/sales.csv' 
 WHERE customer_id = 'C001' OR customer_id = 'C002' AND quantity > 10;
 -- 意図：C001またはC002の、10個超の購入
