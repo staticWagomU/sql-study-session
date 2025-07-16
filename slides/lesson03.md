@@ -332,13 +332,10 @@ WHERE ___ OR ___;
 以下のクエリの間違いを修正してください：
 
 ```sql
--- エラー1：
 SELECT * FROM 'data/sales.csv' WHERE customer_id = C001;
 
--- エラー2：
 SELECT * FROM 'data/products.csv' WHERE price => 10000;
 
--- エラー3：
 SELECT * FROM 'data/sales.csv' 
 WHERE customer_id = 'C001' OR customer_id = 'C002' AND quantity > 10;
 -- 意図：C001またはC002の、10個超の購入

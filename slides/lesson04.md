@@ -382,17 +382,14 @@ LIMIT ___;
 以下のクエリの問題点を見つけて修正：
 
 ```sql
--- エラー1：
 SELECT * FROM 'data/products.csv'
 ORDER BY price DESC
 WHERE category = '電子機器';
 
--- エラー2：
 SELECT product_name, price
 FROM 'data/products.csv'
 ORDER BY product_id;
 
--- エラー3：
 SELECT * FROM 'data/sales.csv'
 ORDER BY DESC quantity;
 ```

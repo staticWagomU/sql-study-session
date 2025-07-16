@@ -451,16 +451,13 @@ WHERE句と組み合わせ：
 以下のクエリの問題を修正：
 
 ```sql
--- エラー1：テーブル別名の使い忘れ
 SELECT customer_name, product_name
 FROM 'data/sales.csv' AS s
 INNER JOIN 'data/customers.csv' AS c ON customer_id = customer_id;
 
--- エラー2：結合条件の間違い
 SELECT * FROM 'data/sales.csv' s
 INNER JOIN 'data/products.csv' p ON s.customer_id = p.product_id;
 
--- エラー3：存在しない列の参照
 SELECT s.sale_id, c.name, p.item_name
 FROM 'data/sales.csv' s
 INNER JOIN 'data/customers.csv' c ON s.customer_id = c.customer_id

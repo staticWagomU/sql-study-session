@@ -477,17 +477,14 @@ GROUP BY 顧客層;
 以下のクエリの問題点を修正：
 
 ```sql
--- エラー1：GROUP BYに含まれない列
 SELECT customer_id, product_id, COUNT(*)
 FROM 'data/sales.csv'
 GROUP BY customer_id;
 
--- エラー2：集計関数なしのGROUP BY
 SELECT customer_id
 FROM 'data/sales.csv'
 GROUP BY customer_id;
 
--- エラー3：HAVINGとWHEREの混同
 SELECT customer_id, COUNT(*) as cnt
 FROM 'data/sales.csv'
 HAVING customer_id = 'C001'
