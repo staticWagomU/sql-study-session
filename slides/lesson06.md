@@ -190,13 +190,9 @@ SELECT
     SUM(quantity) AS 総購入数
 FROM 'data/sales.csv'
 GROUP BY customer_id
-HAVING COUNT(*) >= 3
+HAVING COUNT(*) >= 3 -- GROUP BY後の結果に対する条件（WHERE句はGROUP BY前）
 ORDER BY 総購入数 DESC;
 ```
-
-<div class="tip">
-<strong>HAVING句</strong>：GROUP BY後の結果に対する条件（WHERE句はGROUP BY前）
-</div>
 
 ---
 
@@ -245,8 +241,9 @@ GROUP BY customer_id;
 ## よくあるエラーと対処法
 
 <div class="warning">
-<strong>エラーになる例</strong>：
+    <strong>エラーになる例</strong>：
 </div>
+
 ```sql
 -- product_idがGROUP BYにない！
 SELECT 
@@ -260,8 +257,9 @@ GROUP BY customer_id;
 ---
 
 <div class="tip">
-<strong>正しい例</strong>：
+    <strong>正しい例</strong>：
 </div>
+
 ```sql
 SELECT 
     customer_id,
