@@ -211,6 +211,9 @@ ORDER BY price DESC;
 -- NULL値は最後に来る（DuckDBの場合）
 SELECT * FROM 'data/customers.csv'
 ORDER BY registration_date DESC;
+-- ORDER BY registration_date DESC NULLS LAST; -- NULL値は最後に来る
+-- ORDER BY registration_date DESC NULLS FIRST; -- NULL値は最初に来る
+
 ```
 
 ---
@@ -224,6 +227,8 @@ SELECT * FROM テーブル
 ORDER BY 数値列 DESC
 LIMIT 5;
 ```
+
+---
 
 ## 2. 時系列分析
 ```sql
@@ -250,7 +255,7 @@ ORDER BY 名前列;
 - <span class="check">`DESC`で降順（大きい順）</span>
 - <span class="check">`ASC`で昇順（小さい順）※省略可能</span>
 - <span class="check">複数列での並び替えも可能</span>
-- <span class="check">WHERE句と組み合わせて使える</span>
+- <span class="check">WHERE句等の他の構文と組み合わせて使える</span>
 
 ---
 
@@ -377,17 +382,17 @@ LIMIT ___;
 以下のクエリの問題点を見つけて修正：
 
 ```sql
--- エラー1：ORDER BYの位置
+-- エラー1：
 SELECT * FROM 'data/products.csv'
 ORDER BY price DESC
 WHERE category = '電子機器';
 
--- エラー2：存在しない列での並び替え
+-- エラー2：
 SELECT product_name, price
 FROM 'data/products.csv'
 ORDER BY product_id;
 
--- エラー3：DESCの位置
+-- エラー3：
 SELECT * FROM 'data/sales.csv'
 ORDER BY DESC quantity;
 ```
