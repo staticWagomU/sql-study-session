@@ -8,7 +8,7 @@ header: 'SQL勉強会 - 第5回'
 
 <!-- _class: lead -->
 
-# 第5回：全体を集計する - COUNT, SUM, AVG
+# 第5回：全体を集計する<br /> - COUNT, SUM, AVG -
 ## 表全体の件数や合計、平均値を計算できるようになる
 
 ---
